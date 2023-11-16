@@ -1,3 +1,4 @@
+from pydantic import BaseModel
 from sqlalchemy import Table, Column, Integer, String, TIMESTAMP, MetaData
 
 metadata = MetaData()
@@ -12,3 +13,11 @@ operation = Table(
     Column("date", TIMESTAMP),
     Column("type", String),
 )
+
+class Operation(BaseModel):
+    id = Column(Integer, primary_key=True)
+    quantity = Column(String, nullable=False)
+    figi = Column(String, nullable=False)
+    instrument_type = Column(String, nullable=False)
+    date = Column(TIMESTAMP, nullable=False)
+    type = Column(String, nullable=False)
