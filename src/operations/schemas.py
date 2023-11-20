@@ -6,7 +6,7 @@ class OperationRead(schemas.SCHEMA):
     quantity: str
     figi: str
     instrument_type: str
-    type: str
+    type: int
 
 class OperationCreate(schemas.SCHEMA):
     id: int
