@@ -49,6 +49,4 @@ async def get_role_router(user_id: int, session: AsyncSession = Depends(get_asyn
 
 
 # Only for DEVs
-@auth_router.post("/create/default_role")
-async def create_default_role_router(session: AsyncSession = Depends(get_async_session)):
-    return await create_default_role(session=session)
+
